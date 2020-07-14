@@ -14,6 +14,6 @@ def list(request):
     articleList = Article.objects.all() # Article이라는 데베 테이블에 있는 모든 컬럼을 가져와 articleList에 저장함
     return render(request, 'list.html', {'articleList':articleList})
 
-def view(request, num='1'):
-    article = Article.objects.get(id=num)   # article이라는 모델의 object중에 아이템을 가져옴 # 모델 생성시 모델에 대한 아이디 생성됨
+def view(request, num="1"):
+    article = Article.objects.get(id=num)   # 게시물 하나 보냄 # article이라는 모델의 object중에 아이템을 가져옴 # 모델 생성시 모델에 대한 아이디 생성됨 #id 통해 게시물에 접근
     return render(request, 'view.html', {'article':article})
